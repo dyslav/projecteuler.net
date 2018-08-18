@@ -6,11 +6,10 @@ function isPrimeNumber($num){
      $arr = array();
      for ($i=2; $i < $num; $i++) {
           if($num % $i === 0) {
-               $arr[] = '';
-               break;
+               return false;
           }
      }
-     return (count($arr)>0) ? false : true;
+     return true;
 }
 
 function largestPrimeFactor($num) {
