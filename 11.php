@@ -74,5 +74,5 @@ for ($i=0; $i < 17; $i++) {
      }
 }
 
-echo $maxMultiply;
+echo $maxMultiply; //70600674
 ?>
