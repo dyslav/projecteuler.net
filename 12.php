@@ -36,7 +36,6 @@ function howManyDivisors($num) {
           foreach($resArr as $key => $val) {
                $res *= $val+1;
           }
-
      return $res;
 }
 
