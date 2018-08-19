@@ -22,5 +22,5 @@ foreach ($nameList as $key => $value) {
      }
      $total += ($key + 1) * $sum;
 }
-echo $total;
+echo $total; //871198282
 ?>
