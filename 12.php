@@ -12,38 +12,37 @@
 // We can see that 28 is the first triangle number to have over five divisors.
 // What is the value of the first triangle number to have over five hundred divisors?
 
-function triangularNumber($num) {
-     return ($num * ($num + 1)) / 2;
+function triangularNumber($num)
+{
+    return ($num * ($num + 1)) / 2;
 }
 
-function howManyDivisors($num) {
-     $arr = array();
-     $i = 2;
-          do{
-               if ($num % $i === 0) {
-                    $arr[] = $i;
-                    $num = $num / $i;
-                    $i = 2;
-               }
-               else {
-                    $i++;
-               }
-          }
-          while ($i <= $num);
+function howManyDivisors($num)
+{
+    $arr = array();
+    $i = 2;
+        do{
+            if ($num % $i === 0) {
+                $arr[] = $i;
+                $num = $num / $i;
+                $i = 2;
+            } else {
+                $i++;
+            }
+        } while ($i <= $num);
 
-          $resArr = array_count_values($arr);
-          $res = 1;
-          foreach($resArr as $key => $val) {
-               $res *= $val+1;
-          }
-     return $res;
+        $resArr = array_count_values($arr);
+        $res = 1;
+        foreach ($resArr as $key => $val) {
+            $res *= $val+1;
+        }
+    return $res;
 }
 
-for ($i=1; $i < 20000; $i++) {
-     $howManyDivisors = howManyDivisors(triangularNumber($i));
-     if($howManyDivisors > 500) {
-          echo $i.'<sup>th</sup> triangle number is ' . triangularNumber($i) . ' and it have ' . $howManyDivisors . ' divisors.';
-          break;
-     }
+for ($i = 1; $i < 20000; $i++) {
+    $howManyDivisors = howManyDivisors(triangularNumber($i));
+    if($howManyDivisors > 500) {
+        echo $i.'<sup>th</sup> triangle number is ' . triangularNumber($i) . ' and it have ' . $howManyDivisors . ' divisors.';
+        break;
+    }
 }
-?>

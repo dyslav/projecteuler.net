@@ -44,21 +44,19 @@ $exp = explode('
 ',$str);
 
 foreach ($exp as $key => $value) {
-     $exp2[$key] = explode(' ',$value);
+    $exp2[$key] = explode(' ',$value);
 }
 
 $cnt = count($exp);
 
-for ($i=$cnt-2; $i >= 0; $i--) {
-     for ($j=0; $j <= $i ; $j++) {
-          if ($exp2[$i][$j] + $exp2[$i+1][$j] > $exp2[$i][$j] + $exp2[$i+1][$j+1]) {
-               $exp2[$i][$j] = (int) $exp2[$i][$j] + (int) $exp2[$i+1][$j];
-          }
-          else {
-               $exp2[$i][$j] = (int) $exp2[$i][$j] + (int) $exp2[$i+1][$j+1];
-          }
-     }
+for ($i = $cnt - 2; $i >= 0; $i--) {
+    for ($j = 0; $j <= $i ; $j++) {
+        if ($exp2[$i][$j] + $exp2[$i+1][$j] > $exp2[$i][$j] + $exp2[$i+1][$j+1]) {
+            $exp2[$i][$j] = (int) $exp2[$i][$j] + (int) $exp2[$i+1][$j];
+        } else {
+            $exp2[$i][$j] = (int) $exp2[$i][$j] + (int) $exp2[$i+1][$j+1];
+        }
+    }
 }
 
 echo $exp2[0][0]; //1074
-?>

@@ -46,33 +46,32 @@ $arr[19] = array('01', '70', '54', '71', '83', '51', '54', '69', '16', '92', '33
 
 $maxMultiply = 0;
 
-for ($i=0; $i < 20; $i++) {
-     for ($j=0; $j < 17 ; $j++) {
-          $multiply = $arr[$i][$j] * $arr[$i][$j+1] * $arr[$i][$j+2] * $arr[$i][$j+3];
-          $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
-     }
+for ($i = 0; $i < 20; $i++) {
+    for ($j = 0; $j < 17 ; $j++) {
+        $multiply = $arr[$i][$j] * $arr[$i][$j+1] * $arr[$i][$j+2] * $arr[$i][$j+3];
+        $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
+    }
 }
 
-for ($i=0; $i < 17; $i++) {
-     for ($j=0; $j < 20 ; $j++) {
-          $multiply = $arr[$i][$j] * $arr[$i+1][$j] * $arr[$i+2][$j] * $arr[$i+3][$j];
-          $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
-     }
+for ($i = 0; $i < 17; $i++) {
+    for ($j = 0; $j < 20 ; $j++) {
+        $multiply = $arr[$i][$j] * $arr[$i+1][$j] * $arr[$i+2][$j] * $arr[$i+3][$j];
+        $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
+    }
 }
 
-for ($i=0; $i < 17; $i++) {
-     for ($j=0; $j < 17 ; $j++) {
-          $multiply = $arr[$i][$j] * $arr[$i+1][$j+1] * $arr[$i+2][$j+2] * $arr[$i+3][$j+3];
-          $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
-     }
+for ($i = 0; $i < 17; $i++) {
+    for ($j = 0; $j < 17 ; $j++) {
+        $multiply = $arr[$i][$j] * $arr[$i+1][$j+1] * $arr[$i+2][$j+2] * $arr[$i+3][$j+3];
+        $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
+    }
 }
 
-for ($i=0; $i < 17; $i++) {
-     for ($j=3; $j < 20 ; $j++) {
-          $multiply = $arr[$i][$j] * $arr[$i+1][$j-1] * $arr[$i+2][$j-2] * $arr[$i+3][$j-3];
-          $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
-     }
+for ($i = 0; $i < 17; $i++) {
+    for ($j = 3; $j < 20 ; $j++) {
+        $multiply = $arr[$i][$j] * $arr[$i+1][$j-1] * $arr[$i+2][$j-2] * $arr[$i+3][$j-3];
+        $maxMultiply = ($multiply > $maxMultiply) ? $multiply : $maxMultiply;
+    }
 }
 
 echo $maxMultiply; //70600674
-?>

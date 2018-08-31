@@ -5,8 +5,7 @@
 
 $str = number_format(pow(2, 1000), 0, '', '');
 $sum = 0;
-for ($i=0; $i < strlen($str); $i++) {
-     $sum += $str[$i];
+for ($i = 0; $i < strlen($str); $i++) {
+    $sum += $str[$i];
 }
 echo $sum; //1366
-?>

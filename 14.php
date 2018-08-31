@@ -9,27 +9,28 @@
 // Which starting number, under one million, produces the longest chain?
 // NOTE: Once the chain starts the terms are allowed to go above one million.
 
-function followingSequence($n) {
-     $i = 1;
-     do {
-          if($n % 2 === 0) {
-               $n = $n / 2;
-          }
-          else {
-               $n = 3 * $n + 1;
-          }
-          $i++;
-     } while ($n > 1);
-     return $i;
+function followingSequence($n)
+{
+    $i = 1;
+    do {
+        if ($n % 2 === 0) {
+            $n = $n / 2;
+        }
+        else {
+            $n = 3 * $n + 1;
+        }
+        $i++;
+    } while ($n > 1);
+    return $i;
 }
 
 $longestChain = 0;
-for ($i=1000000; $i > 0; $i--) {
-     $followingSequence = followingSequence($i);
-     if ($followingSequence > $longestChain) {
-          $longestChain = $followingSequence;
-          $startingNumber = $i;
-     }
+for ($i = 1000000; $i > 0; $i--) {
+    $followingSequence = followingSequence($i);
+    if ($followingSequence > $longestChain) {
+        $longestChain = $followingSequence;
+        $startingNumber = $i;
+    }
 }
+
 echo $startingNumber; //837799
-?>

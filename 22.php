@@ -4,8 +4,9 @@
 // For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
 // What is the total of all the name scores in the file?
 
-function letterPosition($letter) {
-     return ord(strtolower($letter))- 96;
+function letterPosition($letter)
+{
+    return ord(strtolower($letter)) - 96;
 }
 
 $file = file_get_contents('p022_names.txt');
@@ -15,12 +16,12 @@ sort($nameList);
 
 $total = 0;
 foreach ($nameList as $key => $value) {
-     $cnt = strlen($value);
-     $sum = 0;
-     for ($i=0; $i < $cnt; $i++) {
-          $sum += letterPosition($value[$i]);
-     }
-     $total += ($key + 1) * $sum;
+    $cnt = strlen($value);
+    $sum = 0;
+    for ($i = 0; $i < $cnt; $i++) {
+        $sum += letterPosition($value[$i]);
+    }
+    $total += ($key + 1) * $sum;
 }
+
 echo $total; //871198282
-?>

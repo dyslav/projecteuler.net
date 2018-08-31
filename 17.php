@@ -10,38 +10,31 @@ $hundred = 'hundred';
 
 $limit = 1000;
 $sum = 0;
-for ($i=1; $i <= $limit ; $i++) {
-     $str = (string) $i;
-     $strlenStr = strlen($str);
+for ($i = 1; $i <= $limit ; $i++) {
+    $str = (string) $i;
+    $strlenStr = strlen($str);
 
-     if ($i < 20) {
-          $sum += strlen($numbers[$i]);
-     }
-     elseif ($i < 100) {
-          if($str[$strlenStr-1] == 0) {
-               $sum += strlen($dozens[$str[0]]);
-          }
-          else {
+    if ($i < 20) {
+        $sum += strlen($numbers[$i]);
+     } elseif ($i < 100) {
+        if($str[$strlenStr-1] == 0) {
+            $sum += strlen($dozens[$str[0]]);
+        } else {
                $sum += strlen($dozens[$str[0]]) + strlen($numbers[$str[$strlenStr-1]]);
-          }
-     }
-     elseif ($i < 1000) {
-          if ($str[$strlenStr-1] == 0 && $str[$strlenStr-2] == 0) {
-               $sum += strlen($numbers[$str[0]]) + strlen($hundred);
-          }
-          elseif ($str[$strlenStr-1] < 10 && $str[$strlenStr-2] == 0) {
-               $sum += strlen($numbers[$str[0]]) + strlen($hundred) + strlen($numbers[$str[$strlenStr-1]]) + strlen('and');
-          }
-          elseif ($str[$strlenStr-2].$str[$strlenStr-1] < 20) {
-               $sum += strlen($numbers[$str[0]]) + strlen($hundred) + strlen($numbers[$str[$strlenStr-2].$str[$strlenStr-1]]) + strlen('and');
-          }
-          else {
-               $sum += strlen($numbers[$str[0]]) + strlen($hundred) + strlen($dozens[$str[$strlenStr-2]]) + strlen($numbers[$str[$strlenStr-1]]) + strlen('and');
-          }
-     }
-     elseif ($i === 1000) {
-          $sum += strlen('onethousand');
-     }
+        }
+     } elseif ($i < 1000) {
+        if ($str[$strlenStr-1] == 0 && $str[$strlenStr-2] == 0) {
+            $sum += strlen($numbers[$str[0]]) + strlen($hundred);
+        } elseif ($str[$strlenStr-1] < 10 && $str[$strlenStr-2] == 0) {
+            $sum += strlen($numbers[$str[0]]) + strlen($hundred) + strlen($numbers[$str[$strlenStr-1]]) + strlen('and');
+        } elseif ($str[$strlenStr-2].$str[$strlenStr-1] < 20) {
+            $sum += strlen($numbers[$str[0]]) + strlen($hundred) + strlen($numbers[$str[$strlenStr-2].$str[$strlenStr-1]]) + strlen('and');
+        } else {
+            $sum += strlen($numbers[$str[0]]) + strlen($hundred) + strlen($dozens[$str[$strlenStr-2]]) + strlen($numbers[$str[$strlenStr-1]]) + strlen('and');
+        }
+    } elseif ($i === 1000) {
+        $sum += strlen('onethousand');
+    }
 }
+
 echo $sum; //21124
-?>

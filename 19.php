@@ -12,12 +12,12 @@
 // How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
 $cnt = 0;
-for ($y=1901; $y <= 2000; $y++) {
-     for ($m=1; $m <= 12; $m++) {
-          if (jddayofweek(cal_to_jd(CAL_GREGORIAN, $m, 1, $y),1) === "Sunday") {
-               $cnt++;
-          }
-     }
+for ($y = 1901; $y <= 2000; $y++) {
+    for ($m = 1; $m <= 12; $m++) {
+        if (jddayofweek(cal_to_jd(CAL_GREGORIAN, $m, 1, $y),1) === "Sunday") {
+            $cnt++;
+        }
+    }
 }
+
 echo $cnt; //171
-?>

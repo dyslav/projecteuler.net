@@ -207,7 +207,6 @@ $exp = explode('
 ', $str);
 $sum = 0;
 foreach ($exp as $key => $value) {
-     $sum += $value;
+    $sum += $value;
 }
 echo substr(number_format($sum, 0, '', ''), 0, 10); //5537376230
-?>

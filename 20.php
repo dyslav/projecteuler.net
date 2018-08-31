@@ -5,14 +5,14 @@
 // and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 // Find the sum of the digits in the number 100!
 
-function sumStr($str) {
-     $str = (string) $str;
-     $sum = 0;
-     for ($i=0; $i < strlen($str); $i++) {
-          $sum += $str[$i];
-     }
-     return $sum;
+function sumStr($str)
+{
+    $str = (string) $str;
+    $sum = 0;
+    for ($i = 0; $i < strlen($str); $i++) {
+        $sum += $str[$i];
+    }
+    return $sum;
 }
 
 echo sumStr(gmp_fact(100)); //648
-?>
