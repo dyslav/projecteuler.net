@@ -1,2 +1,2 @@
 # projecteuler.net
-Solving problems from projecteuler.net
+Solving problems from http://projecteuler.net
