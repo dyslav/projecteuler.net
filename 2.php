@@ -9,6 +9,7 @@ function fibonacci($num)
     $arr = array(0, 1);
         for ($i = 0; $i < $num; $i++) {
             $arr[] = end($arr) + prev($arr);
+            unset($arr[$i-1]);
         }
     return end($arr);
 }
