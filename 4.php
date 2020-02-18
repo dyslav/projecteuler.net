@@ -12,7 +12,8 @@ for ($i = 999; $i > 99; $i--) {
             $arr[] = $addition;
             break;
         } elseif (strlen($addition) == 5 && $addition[0] == $addition[4] && $addition[1] == $addition[3]) {
-            
+            $arr[] = $addition;
+            break;
         }
     }
 }
