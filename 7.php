@@ -3,9 +3,12 @@
 // By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 // What is the 10 001st prime number?
 
+$start = microtime(true);
+
 function isPrimeNumber($num)
 {
-    for ($i = 2; $i < $num; $i++) {
+    $halfNum = ceil($num / 2);
+    for ($i = 2; $i <= $halfNum; $i++) {
         if ($num % $i === 0) {
             return false;
         }
@@ -27,3 +30,7 @@ function primeNumber($num)
 }
 
 echo primeNumber(10001); //104743
+
+$time = microtime(true) - $start;
+echo "\r\n";
+var_dump($time);
